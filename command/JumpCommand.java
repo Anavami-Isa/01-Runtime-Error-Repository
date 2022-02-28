@@ -20,7 +20,7 @@ public class JumpCommand {
         Jump.txt.close();{
             for (int i = 0; i < 6; i++);
             System.out.println(toPrint[i]);
-            sleep();
+            sleep(6);
             clear();
 
         }

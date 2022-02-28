@@ -21,7 +21,7 @@ public class JumpCommand {
                 Fre.txt.close();{
                     for (int i = 0; i < 3; i++);
                     System.out.println(toPrint[i]);
-                    sleep();
+                    sleep(3);
                     clear();
         }
             } 
