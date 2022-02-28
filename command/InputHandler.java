@@ -1,21 +1,29 @@
 package command;
 
-public class InputHandler {
-    private HashMap<String, command> commands;
+import java.util.HashMap;
 
-    public inputHandler(Player player) {
-        commands = new Hashmap<>();
+public class InputHandler {
+    private HashMap<String, Command> commands;
+    /**
+     * sets up the hashmap for the comanda
+     * @param player pass in a player
+     */
+    public InputHandler(Player player) {
+       commands = new HashMap<>();
         RunCommand run = new RunCommand(player);
         JumpCommand jump = new JumpCommand(player);
-        FireCommand fire = new FireCommand(player);
+        FireCommand fireCommand = new FireCommand(player);
         QuitCommand quit = new QuitCommand(player);
         this.commands.put("run", run);
-        this.commands.put("jump", run);
-        this.commands.put("fire", run);
-        this.commands.put("quit", run);
+        this.commands.put("jump", jump);
+        this.commands.put("fire", fireCommand);
+        this.commands.put("quit", quit);
     }
-
+    /**
+     * pick which comand to use
+     * @param button
+     */
     public void buttonPressed(String button) {
-        commands.get(button).execute();
+    commands.get(button).execute();
     }
 }

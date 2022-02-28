@@ -6,7 +6,7 @@ import java.util.concurrent.TimeUnit;
 
 public class Player {
     public Player() {
-    
+    System.out.println("the Player is born");
     }
 
     /**
@@ -14,24 +14,23 @@ public class Player {
      */
     public void jump()  {
     
-    try {
-    File jump = new File("jump.txt");
-    Scanner readFile = new Scanner(jump);
-    while(readFile.hasNextLine()) {
-        String toPrint[] = new String [6];
-        for(int i = 0; i < toPrint.length; ++i) {
-        toPrint[i] = readFile.nextLine();
-        }
-        readFile.close();
-        for (int i = 0; i <toPrint.length; ++i) { 
-        System.out.println(toPrint[i]);
+        try{
+            File run = new File("command/jump.txt");
+            Scanner read = new Scanner(run);
+            while(read.hasNextLine()) {
+                
+                for(int i = 0; i < 6; ++i) {
+                String toPrint = read.nextLine();
+                System.out.println(toPrint);
+                }
+                
+                    sleep(100);
+                    clear();
+                }
+                read.close();
+            }catch (FileNotFoundException s) {
+                System.out.println(" error no file");
             }
-            sleep(5);
-            clear();
-        }
-    }catch(FileNotFoundException e) {
-    System.out.println("an error occurred");
-       }
     }
 
     /**
@@ -39,46 +38,46 @@ public class Player {
      */
     public void fire() {
         
-        try {
-        File fire = new File("fire.txt");
-        Scanner readFile = new Scanner(fire);
-        while(readFile.hasNextLine()) {
-            String toPrint[] = new String [3];
-            for(int i = 0; i < toPrint.length; ++i) {
-            toPrint[i] = readFile.nextLine();
+      
+            try{
+                File run = new File("command/fire.txt");
+                Scanner read = new Scanner(run);
+                while(read.hasNextLine()) {
+                    
+                    for(int i = 0; i < 3; ++i) {
+                    String toPrint = read.nextLine();
+                    System.out.println(toPrint);
+                    }
+                    
+                        sleep(100);
+                        clear();
+                    }
+                    read.close();
+                }catch (FileNotFoundException s) {
+                    System.out.println(" error no file");
             }
-            readFile.close();
-            for (int i = 0; i <toPrint.length; ++i) { 
-            System.out.println(toPrint[i]);
-                }
-                sleep(5);
-                clear();
             }
-        }catch(FileNotFoundException e) {
-        System.out.println("an error occurred");
-           }
-    }
+    
 
     public void runForward() {
         
-        try {
-        File run = new File("run.txt");
-        Scanner readFile = new Scanner(run);
-        while(readFile.hasNextLine()) {
-            String toPrint[] = new String [3];
-            for(int i = 0; i < toPrint.length; ++i) {
-            toPrint[i] = readFile.nextLine();
+        try{
+        File run = new File("command/run.txt");
+        Scanner read = new Scanner(run);
+        while(read.hasNextLine()) {
+            
+            for(int i = 0; i < 3; ++i) {
+            String toPrint = read.nextLine();
+            System.out.println(toPrint);
             }
-            readFile.close();
-            for (int i = 0; i <toPrint.length; ++i) { 
-            System.out.println(toPrint[i]);
-                }
-                sleep(5);
+            
+                sleep(100);
                 clear();
             }
-        }catch(FileNotFoundException e) {
-        System.out.println("an error occurred");
-           }  
+            read.close();
+        }catch (FileNotFoundException s) {
+            System.out.println(" error no file");
+        }
     }
 
 /**

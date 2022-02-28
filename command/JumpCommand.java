@@ -1,39 +1,18 @@
 package command;
-import java.util*;
-import java.util.concurrent.TimeUnit;
-public class JumpCommand {
+
+public class JumpCommand implements Command {
     private Player player;
-
+    /**
+     * sets the player
+     * @param player
+     */
     public JumpCommand(Player player) {
-    this.jump = jump;
+    this.player = player;
     }
-    File Jump = new File("Desktop/Jump.txt");
-    Scanner scan = new scanner(Jump);{
-
-    
-    while(readFile.hasNextLine()) {
-
-    String toPrint[] = new String [6];
-    for (int i = 0; i< 6; i++){
-        toPrint[i]= readFile.nextLine();
-           }
-        Jump.txt.close();{
-            for (int i = 0; i < 6; i++);
-            System.out.println(toPrint[i]);
-            sleep(6);
-            clear();
-
-        }
-        
-        }
-            } 
+    /**
+     * calls the jump method
+     */
     public void execute() {
-        Jump();
+        player.jump();
     }
-
-    public String getName() {
-        return "Jump";
-    }
-
 }
-
